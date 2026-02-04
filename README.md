@@ -26,36 +26,6 @@ This project focuses on clean UI design, responsiveness, and reusable components
 - **HTML5**
 - **CSS3**
 
----
-
-## 📂 Project Structure
-
-my-react-app/
-│
-├── public/
-│
-├── src/
-│ ├── components/
-│ │ ├── Navbar.jsx
-│ │ ├── Hero.jsx
-│ │ ├── Footer.jsx
-│ │
-│ ├── pages/
-│ │ ├── Home.jsx
-│ │ ├── About.jsx
-│ │
-│ ├── App.jsx
-│ ├── main.jsx
-│ └── index.css
-│
-├── index.html
-├── tailwind.config.js
-├── postcss.config.js
-├── package.json
-└── README.md
-
-
----
 
 ## ⚙️ Installation & Setup
 
