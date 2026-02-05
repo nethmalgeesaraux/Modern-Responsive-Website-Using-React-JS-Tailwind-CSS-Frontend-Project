@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { TrustedBy } from "./components/TrustedBy";
 import { Services } from "./components/Services";
+import { OurWork } from "./components/OurWork";
 
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
       <Navbar theme={theme} setTheme={setTheme} />
       <Hero/>
       <TrustedBy/>
-    <Services/>
+      <Services/>
+      <OurWork/>
     </div>
   );
 }
