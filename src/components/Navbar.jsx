@@ -1,7 +1,9 @@
 import React from "react";
 import assets from "../assets/assets";
+import { Thembtn } from "./Thembtn";
+// Thembtn component import
 
-const Navbar = ({ theme }) => {
+const Navbar = ({ theme, setTheme }) => {
     const logoSrc = theme === "dark" ? assets.logo_dark : assets.logo;
 
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -23,7 +25,8 @@ const Navbar = ({ theme }) => {
                 <img
                     src={assets.close_icon}
                     alt=""
-                    className="w-5 absolute right-4 top-4 sm:hidden" onClick={() => setIsMenuOpen(false)}
+                    className="w-5 absolute right-4 top-4 sm:hidden"
+                    onClick={() => setIsMenuOpen(false)}
                 />
 
                 <a onClick={() => setIsMenuOpen(false)} href="#" className="sm:hover:border-b">Home</a>
@@ -34,13 +37,15 @@ const Navbar = ({ theme }) => {
 
             <div className="flex items-center gap-2 sm:gap-4">
 
+               
+                <Thembtn theme={theme} setTheme={setTheme} />
+
                 <img
                     src={theme === 'dark' ? assets.menu_icon_dark : assets.menu_icon}
                     alt=""
                     onClick={() => setIsMenuOpen(true)}
                     className="w-8 sm:hidden"
                 />
-
 
                 <a href="#contact-us"
                     className="text-sm max-sm:hidden flex items-center gap-2 
@@ -51,8 +56,6 @@ const Navbar = ({ theme }) => {
                     <img src={assets.arrow_icon} width={14} alt="" />
                 </a>
             </div>
-
-
         </div>
     );
 };
