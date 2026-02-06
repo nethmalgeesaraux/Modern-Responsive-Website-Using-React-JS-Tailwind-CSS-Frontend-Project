@@ -2,7 +2,7 @@ import React from "react";
 import assets from "../assets/assets";
 import toast, { Toaster } from "react-hot-toast";
 
-export const Footer = () => {
+export const Footer = ({ theme }) => {
     const onSubscribe = async (event) => {
         event.preventDefault();
 
@@ -28,15 +28,18 @@ export const Footer = () => {
         }
     };
 
+
+    const logoSrc = theme === "dark" ? assets.logo_dark : assets.logo;
+
     return (
         <footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-6 sm:px-12 lg:px-24 xl:px-40 py-12">
             <Toaster position="top-right" reverseOrder={false} />
 
             <div className="flex flex-col md:flex-row justify-between gap-10">
-                {/* Left side */}
                 <div className="flex flex-col gap-6 max-w-md">
                     <div className="flex items-center gap-3">
-                        <img src={assets.logo} alt="Agency Logo" className="w-50 h-10" />
+
+                        <img src={logoSrc} alt="Agency Logo" className="w-40 h-auto" />
                     </div>
                     <p className="text-sm opacity-80">
                         From strategy to execution, we craft digital solutions that move your business forward.
@@ -76,7 +79,7 @@ export const Footer = () => {
             {/* Bottom section */}
             <div className="flex flex-col md:flex-row justify-between items-center mt-10 border-t border-gray-300 dark:border-gray-700 pt-6 gap-4">
                 <p className="text-xs">
-                    Copyright 2025 © agency.ai - All Right Reserved.
+                    Copyright 2026 © agency.ai - All Right Reserved.
                 </p>
                 <div className="flex gap-4">
                     <a href="https://www.facebook.com/nethmal.geesara.3"><img src={assets.facebook_icon} alt="Facebook" className="w-5 h-5" /></a>

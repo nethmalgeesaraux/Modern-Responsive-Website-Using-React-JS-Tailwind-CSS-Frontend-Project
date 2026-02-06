@@ -23,7 +23,8 @@ function App() {
       <OurWork/>
       <Teams/>
       <ContactUs/>
-      <Footer/>
+      <br/>
+      <Footer theme={theme}/>
     </div>
   );
 }
