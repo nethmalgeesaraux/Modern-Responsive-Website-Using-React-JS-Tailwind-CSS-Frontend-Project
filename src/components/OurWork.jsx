@@ -47,8 +47,6 @@ export const OurWork = () => {
                 ))}
             </div>
 
-
-
         </div>
 
     )
