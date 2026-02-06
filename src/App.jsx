@@ -7,6 +7,7 @@ import { OurWork } from "./components/OurWork";
 import { Teams } from "./components/Teams";
 import { ContactUs } from "./components/ContactUs";
 import { Footer } from "./components/Footer";
+import AnimatedSection from "./components/AnimatedSection"; // new wrapper
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -23,7 +24,6 @@ function App() {
     >
       {/* Overlay layer for mouse effect */}
       <div className="pointer-events-none fixed inset-0 z-50">
-        {/* Dot */}
         <div
           className="absolute w-4 h-4 bg-blue-500 rounded-full"
           style={{
@@ -32,8 +32,6 @@ function App() {
             transition: "transform 0.05s linear",
           }}
         ></div>
-
-        {/* Ring */}
         <div
           className="absolute w-16 h-16 border border-gray-400 rounded-full"
           style={{
@@ -42,19 +40,42 @@ function App() {
             transition: "transform 0.1s linear",
           }}
         ></div>
-
       </div>
 
-      {/* Main sections */}
-      <Navbar theme={theme} setTheme={setTheme} />
-      <Hero />
-      <TrustedBy />
-      <Services />
-      <OurWork />
-      <Teams />
-      <ContactUs />
+      {/* Scroll-triggered animations */}
+      <AnimatedSection animationClass="animate-fadeInDown">
+        <Navbar theme={theme} setTheme={setTheme} />
+      </AnimatedSection>
+
+      <AnimatedSection animationClass="animate-fadeInUp">
+        <Hero />
+      </AnimatedSection>
+
+      <AnimatedSection animationClass="animate-fadeInLeft">
+        <TrustedBy />
+      </AnimatedSection>
+
+      <AnimatedSection animationClass="animate-zoomIn">
+        <Services />
+      </AnimatedSection>
+
+      <AnimatedSection animationClass="animate-fadeInUp">
+        <OurWork />
+      </AnimatedSection>
+
+      <AnimatedSection animationClass="animate-fadeInRight">
+        <Teams />
+      </AnimatedSection>
+
+      <AnimatedSection animationClass="animate-fadeIn">
+        <ContactUs />
+      </AnimatedSection>
+
       <br />
-      <Footer theme={theme} />
+
+      <AnimatedSection animationClass="animate-fadeIn">
+        <Footer theme={theme} />
+      </AnimatedSection>
     </div>
   );
 }
